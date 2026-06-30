@@ -1,5 +1,48 @@
-import java.util.Scanner;
-
+import java.util.*;
+class Method {
+    public int add(int a,int b)
+    {
+        return a+b;
+    }
+    public int max(int a,int b)
+    {
+        if(a>b)
+        {
+            return a;
+        }
+        else{
+            return b;
+        }
+    }
+    public boolean prime(int n)
+    {
+        for(int i=2;i*i<=n;i++)
+        {
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    }
+    public int factorial(int n)
+    {
+        int fact = 1;
+        for(int i=n;i>1;i--)
+        {
+            fact *= i;
+        }
+        return fact;
+    }
+    public int reverse(int n)
+    {
+        int rev = 0;
+        while(n>0)
+        {
+            rev = rev*10 + (n%10);
+            n /= 10;
+        }
+        return rev;
+    }
+}
 public class Practice {
     public static void main(String[] args) {
         //Hello World
@@ -112,7 +155,7 @@ public class Practice {
         // }
 
         //Grade calculator
-        int m = 50;
+        //int m = 50;
         // if(m>=90)
         //     System.out.println("S");
         // else if(m>=80)
@@ -125,7 +168,7 @@ public class Practice {
         //     System.out.println("F");
 
         //Simple login (uname,password using if)
-        // Scanner sc = new Scanner(System.in);
+           Scanner sc = new Scanner(System.in);
         // String cuname = "admin";
         // String copas = "java123";
         // String uname = sc.nextLine();
@@ -243,5 +286,90 @@ public class Practice {
         //     }
         //     System.out.println();
         // }
+
+        Method m = new Method();
+        //add 2 nos using method
+        //System.out.println(m.add(2, 3));
+
+        //max of 2 nos
+        //System.out.println(m.max(2, 3));
+
+        //prime no?
+        //System.out.println(m.prime(11));
+
+        //factorial
+        //System.out.println(m.factorial(6));
+
+        //reverse
+        //System.out.println(m.reverse(1234));
+
+        //read and print array
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+
+        //max element
+        // int max = arr[0];
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]>max)
+        //     {
+        //         max = arr[i];
+        //     }
+        // }
+        // System.out.println(max);
+
+        //min element
+        // int min = arr[0];
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]<min)
+        //     {
+        //         min = arr[i];
+        //     }
+        // }
+        // System.out.println(min);
+
+        //avg
+        // int sum = 0;
+        // for(int i=0;i<n;i++)
+        // {
+        //     sum += arr[i];
+        // }
+        // double avg = sum/n;
+        // System.out.println(avg);
+
+        //reverse arr
+        // for(int i=0;i<n/2;i++)
+        // {
+        //     int temp = arr[i];
+        //     arr[i] = arr[n-i-1];
+        //     arr[n-i-1] = temp;
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+
+        //count even and odd nos
+        int e = 0, o = 0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]%2==0)
+            {
+                e++;
+            }
+            else{
+                o++;
+            }
+        }
+        System.out.println("Even: "+e+", Odd: "+o);
     }
 }
